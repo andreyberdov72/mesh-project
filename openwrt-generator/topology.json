@@ -1,0 +1,198 @@
+{
+  "nodes": [
+    {
+      "id": "A1",
+      "location": { "longitude": 34.801, "latitude": 50.907 },
+      "label": "A1",
+      "name": "Node A1"
+    },
+    {
+      "id": "A2",
+      "location": { "longitude": 34.8015, "latitude": 50.9075 },
+      "label": "A2",
+      "name": "Node A2"
+    },
+    {
+      "id": "B1",
+      "location": { "longitude": 34.810, "latitude": 50.895 },
+      "label": "B1",
+      "name": "Node B1"
+    },
+    {
+      "id": "B2",
+      "location": { "longitude": 34.8105, "latitude": 50.8955 },
+      "label": "B2",
+      "name": "Node B2"
+    },
+    {
+      "id": "B3",
+      "location": { "longitude": 34.811, "latitude": 50.895 },
+      "label": "B3",
+      "name": "Node B3"
+    },
+    {
+      "id": "C1",
+      "location": { "longitude": 34.820, "latitude": 50.910 },
+      "label": "C1",
+      "name": "Node C1"
+    },
+    {
+      "id": "C2",
+      "location": { "longitude": 34.8205, "latitude": 50.9105 },
+      "label": "C2",
+      "name": "Node C2"
+    },
+    {
+      "id": "C3",
+      "location": { "longitude": 34.821, "latitude": 50.910 },
+      "label": "C3",
+      "name": "Node C3"
+    },
+    {
+      "id": "D1",
+      "location": { "longitude": 34.830, "latitude": 50.900 },
+      "label": "D1",
+      "name": "Node D1"
+    },
+    {
+      "id": "D2",
+      "location": { "longitude": 34.8305, "latitude": 50.9005 },
+      "label": "D2",
+      "name": "Node D2"
+    },
+    {
+      "id": "E1",
+      "location": { "longitude": 34.840, "latitude": 50.920 },
+      "label": "E1",
+      "name": "Node E1"
+    },
+    {
+      "id": "E2",
+      "location": { "longitude": 34.8405, "latitude": 50.9205 },
+      "label": "E2",
+      "name": "Node E2"
+    }
+  ],
+  "links": [
+    {
+      "source": "A1",
+      "target": "B1",
+      "target_tq": 0.95,
+      "source_tq": 0.94,
+      "color": "#4CAF50",
+      "label": "A1-B1"
+    },
+    {
+      "source": "A2",
+      "target": "C1",
+      "target_tq": 0.92,
+      "source_tq": 0.91,
+      "color": "#4CAF50",
+      "label": "A2-C1"
+    },
+    {
+      "source": "B2",
+      "target": "C2",
+      "target_tq": 0.93,
+      "source_tq": 0.92,
+      "color": "#4CAF50",
+      "label": "B2-C2"
+    },
+    {
+      "source": "B3",
+      "target": "D1",
+      "target_tq": 0.90,
+      "source_tq": 0.89,
+      "color": "#4CAF50",
+      "label": "B3-D1"
+    },
+    {
+      "source": "C3",
+      "target": "E1",
+      "target_tq": 0.91,
+      "source_tq": 0.90,
+      "color": "#4CAF50",
+      "label": "C3-E1"
+    },
+    {
+      "source": "D2",
+      "target": "E2",
+      "target_tq": 0.94,
+      "source_tq": 0.93,
+      "color": "#4CAF50",
+      "label": "D2-E2"
+    },
+    {
+      "source": "A1",
+      "target": "A2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "A1-A2"
+    },
+    {
+      "source": "B1",
+      "target": "B2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "B1-B2"
+    },
+    {
+      "source": "B1",
+      "target": "B3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "B1-B3"
+    },
+    {
+      "source": "B2",
+      "target": "B3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "B2-B3"
+    },
+    {
+      "source": "C1",
+      "target": "C2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "C1-C2"
+    },
+    {
+      "source": "C1",
+      "target": "C3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "C1-C3"
+    },
+    {
+      "source": "C2",
+      "target": "C3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "C2-C3"
+    },
+    {
+      "source": "D1",
+      "target": "D2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "D1-D2"
+    },
+    {
+      "source": "E1",
+      "target": "E2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "E1-E2"
+    }
+  ]
+}

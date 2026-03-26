@@ -1,0 +1,29 @@
+config interface 'loopback'
+    option ifname 'lo'
+    option proto 'static'
+    option ipaddr '127.0.0.1'
+    option netmask '255.0.0.0'
+
+config switch
+    option name 'switch0'
+    option reset '1'
+    option enable_vlan '1'
+
+config switch_vlan
+    option device 'switch0'
+    option vlan '1'
+    option ports '0t {% for port in active_ports %}{{ port }} {% endfor %}'
+
+config interface 'lan'
+    option type 'bridge'
+    option proto 'none'
+    option ifname 'eth0.1'
+
+config interface 'wlan'
+    option proto 'none'
+    option ifname 'wlan0'
+
+config interface 'bat0'
+    option proto 'static'
+    option ipaddr '{{ ip }}'
+    option netmask '255.255.255.0'

@@ -1,0 +1,22 @@
+config defaults
+    option input 'ACCEPT'
+    option output 'ACCEPT'
+    option forward 'REJECT'
+
+config zone
+    option name 'lan'
+    option input 'ACCEPT'
+    option output 'ACCEPT'
+    option forward 'REJECT'
+    option network 'lan bat0 wlan'
+
+config forwarding
+    option src 'lan'
+    option dest 'wan'
+
+config rule
+    option name 'Allow-SSH'
+    option src 'lan'
+    option dest_port '22'
+    option proto 'tcp'
+    option target 'ACCEPT'

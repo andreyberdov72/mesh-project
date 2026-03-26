@@ -8,7 +8,7 @@ myvenv/
 bulk-flasher/tftp-now
 meshnet-lab/
 MeshGraphViewer/
-openwt-generator/openwrt-imagebuilder-*/
+openwrt-generator/openwrt-imagebuilder-*/
 
 # Temporary files
 bulk-flasher/tftp_temp/

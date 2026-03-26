@@ -1,0 +1,994 @@
+{
+  "nodes": [
+    {
+      "id": "A1",
+      "location": { "longitude": 34.801995, "latitude": 50.9074975 },
+      "label": "A1",
+      "name": "Node A1"
+    },
+    {
+      "id": "A2",
+      "location": { "longitude": 34.802, "latitude": 50.9075025 },
+      "label": "A2",
+      "name": "Node A2"
+    },
+    {
+      "id": "A3",
+      "location": { "longitude": 34.802005, "latitude": 50.9074975 },
+      "label": "A3",
+      "name": "Node A3"
+    },
+    {
+      "id": "D1",
+      "location": { "longitude": 34.809995, "latitude": 50.8949975 },
+      "label": "D1",
+      "name": "Node D1"
+    },
+    {
+      "id": "D2",
+      "location": { "longitude": 34.81, "latitude": 50.8950025 },
+      "label": "D2",
+      "name": "Node D2"
+    },
+    {
+      "id": "D3",
+      "location": { "longitude": 34.810005, "latitude": 50.8949975 },
+      "label": "D3",
+      "name": "Node D3"
+    },
+    {
+      "id": "E1",
+      "location": { "longitude": 34.779995, "latitude": 50.9299975 },
+      "label": "E1",
+      "name": "Node E1"
+    },
+    {
+      "id": "E2",
+      "location": { "longitude": 34.78, "latitude": 50.9300025 },
+      "label": "E2",
+      "name": "Node E2"
+    },
+    {
+      "id": "E3",
+      "location": { "longitude": 34.780005, "latitude": 50.9299975 },
+      "label": "E3",
+      "name": "Node E3"
+    },
+    {
+      "id": "F1",
+      "location": { "longitude": 34.7599975, "latitude": 50.9199975 },
+      "label": "F1",
+      "name": "Node F1"
+    },
+    {
+      "id": "F2",
+      "location": { "longitude": 34.7600025, "latitude": 50.9200025 },
+      "label": "F2",
+      "name": "Node F2"
+    },
+    {
+      "id": "G1",
+      "location": { "longitude": 34.7949925, "latitude": 50.9099975 },
+      "label": "G1",
+      "name": "Node G1"
+    },
+    {
+      "id": "G2",
+      "location": { "longitude": 34.7949975, "latitude": 50.9100025 },
+      "label": "G2",
+      "name": "Node G2"
+    },
+    {
+      "id": "G3",
+      "location": { "longitude": 34.7950025, "latitude": 50.9099975 },
+      "label": "G3",
+      "name": "Node G3"
+    },
+    {
+      "id": "G4",
+      "location": { "longitude": 34.7950075, "latitude": 50.9100025 },
+      "label": "G4",
+      "name": "Node G4"
+    },
+    {
+      "id": "H1",
+      "location": { "longitude": 34.81499, "latitude": 50.9049975 },
+      "label": "H1",
+      "name": "Node H1"
+    },
+    {
+      "id": "H2",
+      "location": { "longitude": 34.814995, "latitude": 50.9050025 },
+      "label": "H2",
+      "name": "Node H2"
+    },
+    {
+      "id": "H3",
+      "location": { "longitude": 34.815, "latitude": 50.9049975 },
+      "label": "H3",
+      "name": "Node H3"
+    },
+    {
+      "id": "H4",
+      "location": { "longitude": 34.815005, "latitude": 50.9050025 },
+      "label": "H4",
+      "name": "Node H4"
+    },
+    {
+      "id": "H5",
+      "location": { "longitude": 34.81501, "latitude": 50.9049975 },
+      "label": "H5",
+      "name": "Node H5"
+    },
+    {
+      "id": "I1",
+      "location": { "longitude": 34.8499975, "latitude": 50.9249975 },
+      "label": "I1",
+      "name": "Node I1"
+    },
+    {
+      "id": "I2",
+      "location": { "longitude": 34.8500025, "latitude": 50.9250025 },
+      "label": "I2",
+      "name": "Node I2"
+    },
+    {
+      "id": "J1",
+      "location": { "longitude": 34.78499, "latitude": 50.8999975 },
+      "label": "J1",
+      "name": "Node J1"
+    },
+    {
+      "id": "J2",
+      "location": { "longitude": 34.784995, "latitude": 50.9000025 },
+      "label": "J2",
+      "name": "Node J2"
+    },
+    {
+      "id": "J3",
+      "location": { "longitude": 34.785, "latitude": 50.8999975 },
+      "label": "J3",
+      "name": "Node J3"
+    },
+    {
+      "id": "J4",
+      "location": { "longitude": 34.785005, "latitude": 50.9000025 },
+      "label": "J4",
+      "name": "Node J4"
+    },
+    {
+      "id": "J5",
+      "location": { "longitude": 34.78501, "latitude": 50.8999975 },
+      "label": "J5",
+      "name": "Node J5"
+    },
+    {
+      "id": "K1",
+      "location": { "longitude": 34.819995, "latitude": 50.8849975 },
+      "label": "K1",
+      "name": "Node K1"
+    },
+    {
+      "id": "K2",
+      "location": { "longitude": 34.82, "latitude": 50.8850025 },
+      "label": "K2",
+      "name": "Node K2"
+    },
+    {
+      "id": "K3",
+      "location": { "longitude": 34.820005, "latitude": 50.8849975 },
+      "label": "K3",
+      "name": "Node K3"
+    },
+    {
+      "id": "L1",
+      "location": { "longitude": 34.7749975, "latitude": 50.8949975 },
+      "label": "L1",
+      "name": "Node L1"
+    },
+    {
+      "id": "L2",
+      "location": { "longitude": 34.7750025, "latitude": 50.8950025 },
+      "label": "L2",
+      "name": "Node L2"
+    },
+    {
+      "id": "N1",
+      "location": { "longitude": 34.8299925, "latitude": 50.9149975 },
+      "label": "N1",
+      "name": "Node N1"
+    },
+    {
+      "id": "N2",
+      "location": { "longitude": 34.8299975, "latitude": 50.9150025 },
+      "label": "N2",
+      "name": "Node N2"
+    },
+    {
+      "id": "N3",
+      "location": { "longitude": 34.8300025, "latitude": 50.9149975 },
+      "label": "N3",
+      "name": "Node N3"
+    },
+    {
+      "id": "N4",
+      "location": { "longitude": 34.8300075, "latitude": 50.9150025 },
+      "label": "N4",
+      "name": "Node N4"
+    },
+    {
+      "id": "O1",
+      "location": { "longitude": 34.7899975, "latitude": 50.8799975 },
+      "label": "O1",
+      "name": "Node O1"
+    },
+    {
+      "id": "O2",
+      "location": { "longitude": 34.7900025, "latitude": 50.8800025 },
+      "label": "O2",
+      "name": "Node O2"
+    },
+    {
+      "id": "P1",
+      "location": { "longitude": 34.834995, "latitude": 50.8999975 },
+      "label": "P1",
+      "name": "Node P1"
+    },
+    {
+      "id": "P2",
+      "location": { "longitude": 34.835, "latitude": 50.9000025 },
+      "label": "P2",
+      "name": "Node P2"
+    },
+    {
+      "id": "P3",
+      "location": { "longitude": 34.835005, "latitude": 50.8999975 },
+      "label": "P3",
+      "name": "Node P3"
+    },
+    {
+      "id": "Q1",
+      "location": { "longitude": 34.8199975, "latitude": 50.9299975 },
+      "label": "Q1",
+      "name": "Node Q1"
+    },
+    {
+      "id": "Q2",
+      "location": { "longitude": 34.8200025, "latitude": 50.9300025 },
+      "label": "Q2",
+      "name": "Node Q2"
+    },
+    {
+      "id": "R1",
+      "location": { "longitude": 34.779995, "latitude": 50.8849975 },
+      "label": "R1",
+      "name": "Node R1"
+    },
+    {
+      "id": "R2",
+      "location": { "longitude": 34.78, "latitude": 50.8850025 },
+      "label": "R2",
+      "name": "Node R2"
+    },
+    {
+      "id": "R3",
+      "location": { "longitude": 34.780005, "latitude": 50.8849975 },
+      "label": "R3",
+      "name": "Node R3"
+    },
+    {
+      "id": "S1",
+      "location": { "longitude": 34.7779925, "latitude": 50.9149975 },
+      "label": "S1",
+      "name": "Node S1"
+    },
+    {
+      "id": "S2",
+      "location": { "longitude": 34.7779975, "latitude": 50.9150025 },
+      "label": "S2",
+      "name": "Node S2"
+    },
+    {
+      "id": "S3",
+      "location": { "longitude": 34.7780025, "latitude": 50.9149975 },
+      "label": "S3",
+      "name": "Node S3"
+    },
+    {
+      "id": "S4",
+      "location": { "longitude": 34.7780075, "latitude": 50.9150025 },
+      "label": "S4",
+      "name": "Node S4"
+    }
+  ],
+  "links": [
+    {
+      "source": "A1",
+      "target": "G1",
+      "target_tq": 0.94,
+      "source_tq": 0.93,
+      "color": "#00E676",
+      "label": "A1-G1"
+    },
+    {
+      "source": "A2",
+      "target": "H1",
+      "target_tq": 0.9,
+      "source_tq": 0.89,
+      "color": "#4CAF50",
+      "label": "A2-H1"
+    },
+    {
+      "source": "A3",
+      "target": "N1",
+      "target_tq": 0.8,
+      "source_tq": 0.79,
+      "color": "#FF9800",
+      "label": "A3-N1"
+    },
+    {
+      "source": "G2",
+      "target": "J1",
+      "target_tq": 0.91,
+      "source_tq": 0.9,
+      "color": "#4CAF50",
+      "label": "G2-J1"
+    },
+    {
+      "source": "G3",
+      "target": "S1",
+      "target_tq": 0.93,
+      "source_tq": 0.92,
+      "color": "#00E676",
+      "label": "G3-S1"
+    },
+    {
+      "source": "H2",
+      "target": "N2",
+      "target_tq": 0.9,
+      "source_tq": 0.89,
+      "color": "#4CAF50",
+      "label": "H2-N2"
+    },
+    {
+      "source": "H3",
+      "target": "P1",
+      "target_tq": 0.91,
+      "source_tq": 0.9,
+      "color": "#4CAF50",
+      "label": "H3-P1"
+    },
+    {
+      "source": "H4",
+      "target": "Q1",
+      "target_tq": 0.81,
+      "source_tq": 0.8,
+      "color": "#FF9800",
+      "label": "H4-Q1"
+    },
+    {
+      "source": "D1",
+      "target": "H5",
+      "target_tq": 0.91,
+      "source_tq": 0.9,
+      "color": "#4CAF50",
+      "label": "D1-H5"
+    },
+    {
+      "source": "D2",
+      "target": "J2",
+      "target_tq": 0.89,
+      "source_tq": 0.88,
+      "color": "#4CAF50",
+      "label": "D2-J2"
+    },
+    {
+      "source": "D3",
+      "target": "K1",
+      "target_tq": 0.85,
+      "source_tq": 0.84,
+      "color": "#FFC107",
+      "label": "D3-K1"
+    },
+    {
+      "source": "E1",
+      "target": "S2",
+      "target_tq": 0.91,
+      "source_tq": 0.9,
+      "color": "#4CAF50",
+      "label": "E1-S2"
+    },
+    {
+      "source": "E2",
+      "target": "F1",
+      "target_tq": 0.9,
+      "source_tq": 0.89,
+      "color": "#4CAF50",
+      "label": "E2-F1"
+    },
+    {
+      "source": "E3",
+      "target": "G4",
+      "target_tq": 0.84,
+      "source_tq": 0.83,
+      "color": "#FFC107",
+      "label": "E3-G4"
+    },
+    {
+      "source": "F2",
+      "target": "S3",
+      "target_tq": 0.92,
+      "source_tq": 0.91,
+      "color": "#00E676",
+      "label": "F2-S3"
+    },
+    {
+      "source": "S4",
+      "target": "J3",
+      "target_tq": 0.9,
+      "source_tq": 0.89,
+      "color": "#4CAF50",
+      "label": "S4-J3"
+    },
+    {
+      "source": "J4",
+      "target": "L1",
+      "target_tq": 0.94,
+      "source_tq": 0.93,
+      "color": "#00E676",
+      "label": "J4-L1"
+    },
+    {
+      "source": "J5",
+      "target": "R1",
+      "target_tq": 0.91,
+      "source_tq": 0.9,
+      "color": "#4CAF50",
+      "label": "J5-R1"
+    },
+    {
+      "source": "L2",
+      "target": "R2",
+      "target_tq": 0.94,
+      "source_tq": 0.93,
+      "color": "#00E676",
+      "label": "L2-R2"
+    },
+    {
+      "source": "R3",
+      "target": "O1",
+      "target_tq": 0.91,
+      "source_tq": 0.9,
+      "color": "#4CAF50",
+      "label": "R3-O1"
+    },
+    {
+      "source": "K2",
+      "target": "O2",
+      "target_tq": 0.86,
+      "source_tq": 0.85,
+      "color": "#FFC107",
+      "label": "K2-O2"
+    },
+    {
+      "source": "K3",
+      "target": "P2",
+      "target_tq": 0.89,
+      "source_tq": 0.88,
+      "color": "#4CAF50",
+      "label": "K3-P2"
+    },
+    {
+      "source": "N3",
+      "target": "Q2",
+      "target_tq": 0.9,
+      "source_tq": 0.89,
+      "color": "#4CAF50",
+      "label": "N3-Q2"
+    },
+    {
+      "source": "I1",
+      "target": "N4",
+      "target_tq": 0.89,
+      "source_tq": 0.88,
+      "color": "#4CAF50",
+      "label": "I1-N4"
+    },
+    {
+      "source": "I2",
+      "target": "P3",
+      "target_tq": 0.8,
+      "source_tq": 0.79,
+      "color": "#FF9800",
+      "label": "I2-P3"
+    },
+    {
+      "source": "A1",
+      "target": "A2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "A1-A2"
+    },
+    {
+      "source": "A1",
+      "target": "A3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "A1-A3"
+    },
+    {
+      "source": "A2",
+      "target": "A3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "A2-A3"
+    },
+    {
+      "source": "D1",
+      "target": "D2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "D1-D2"
+    },
+    {
+      "source": "D1",
+      "target": "D3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "D1-D3"
+    },
+    {
+      "source": "D2",
+      "target": "D3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "D2-D3"
+    },
+    {
+      "source": "E1",
+      "target": "E2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "E1-E2"
+    },
+    {
+      "source": "E1",
+      "target": "E3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "E1-E3"
+    },
+    {
+      "source": "E2",
+      "target": "E3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "E2-E3"
+    },
+    {
+      "source": "F1",
+      "target": "F2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "F1-F2"
+    },
+    {
+      "source": "G1",
+      "target": "G2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "G1-G2"
+    },
+    {
+      "source": "G1",
+      "target": "G3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "G1-G3"
+    },
+    {
+      "source": "G1",
+      "target": "G4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "G1-G4"
+    },
+    {
+      "source": "G2",
+      "target": "G3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "G2-G3"
+    },
+    {
+      "source": "G2",
+      "target": "G4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "G2-G4"
+    },
+    {
+      "source": "G3",
+      "target": "G4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "G3-G4"
+    },
+    {
+      "source": "H1",
+      "target": "H2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H1-H2"
+    },
+    {
+      "source": "H1",
+      "target": "H3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H1-H3"
+    },
+    {
+      "source": "H1",
+      "target": "H4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H1-H4"
+    },
+    {
+      "source": "H1",
+      "target": "H5",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H1-H5"
+    },
+    {
+      "source": "H2",
+      "target": "H3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H2-H3"
+    },
+    {
+      "source": "H2",
+      "target": "H4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H2-H4"
+    },
+    {
+      "source": "H2",
+      "target": "H5",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H2-H5"
+    },
+    {
+      "source": "H3",
+      "target": "H4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H3-H4"
+    },
+    {
+      "source": "H3",
+      "target": "H5",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H3-H5"
+    },
+    {
+      "source": "H4",
+      "target": "H5",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "H4-H5"
+    },
+    {
+      "source": "I1",
+      "target": "I2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "I1-I2"
+    },
+    {
+      "source": "J1",
+      "target": "J2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J1-J2"
+    },
+    {
+      "source": "J1",
+      "target": "J3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J1-J3"
+    },
+    {
+      "source": "J1",
+      "target": "J4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J1-J4"
+    },
+    {
+      "source": "J1",
+      "target": "J5",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J1-J5"
+    },
+    {
+      "source": "J2",
+      "target": "J3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J2-J3"
+    },
+    {
+      "source": "J2",
+      "target": "J4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J2-J4"
+    },
+    {
+      "source": "J2",
+      "target": "J5",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J2-J5"
+    },
+    {
+      "source": "J3",
+      "target": "J4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J3-J4"
+    },
+    {
+      "source": "J3",
+      "target": "J5",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J3-J5"
+    },
+    {
+      "source": "J4",
+      "target": "J5",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "J4-J5"
+    },
+    {
+      "source": "K1",
+      "target": "K2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "K1-K2"
+    },
+    {
+      "source": "K1",
+      "target": "K3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "K1-K3"
+    },
+    {
+      "source": "K2",
+      "target": "K3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "K2-K3"
+    },
+    {
+      "source": "L1",
+      "target": "L2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "L1-L2"
+    },
+    {
+      "source": "N1",
+      "target": "N2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "N1-N2"
+    },
+    {
+      "source": "N1",
+      "target": "N3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "N1-N3"
+    },
+    {
+      "source": "N1",
+      "target": "N4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "N1-N4"
+    },
+    {
+      "source": "N2",
+      "target": "N3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "N2-N3"
+    },
+    {
+      "source": "N2",
+      "target": "N4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "N2-N4"
+    },
+    {
+      "source": "N3",
+      "target": "N4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "N3-N4"
+    },
+    {
+      "source": "O1",
+      "target": "O2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "O1-O2"
+    },
+    {
+      "source": "P1",
+      "target": "P2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "P1-P2"
+    },
+    {
+      "source": "P1",
+      "target": "P3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "P1-P3"
+    },
+    {
+      "source": "P2",
+      "target": "P3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "P2-P3"
+    },
+    {
+      "source": "Q1",
+      "target": "Q2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "Q1-Q2"
+    },
+    {
+      "source": "R1",
+      "target": "R2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "R1-R2"
+    },
+    {
+      "source": "R1",
+      "target": "R3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "R1-R3"
+    },
+    {
+      "source": "R2",
+      "target": "R3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "R2-R3"
+    },
+    {
+      "source": "S1",
+      "target": "S2",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "S1-S2"
+    },
+    {
+      "source": "S1",
+      "target": "S3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "S1-S3"
+    },
+    {
+      "source": "S1",
+      "target": "S4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "S1-S4"
+    },
+    {
+      "source": "S2",
+      "target": "S3",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "S2-S3"
+    },
+    {
+      "source": "S2",
+      "target": "S4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "S2-S4"
+    },
+    {
+      "source": "S3",
+      "target": "S4",
+      "target_tq": 1.0,
+      "source_tq": 1.0,
+      "color": "blue",
+      "label": "S3-S4"
+    }
+  ]
+}

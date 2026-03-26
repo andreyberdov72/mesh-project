@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {"id": "A", "location": {"longitude": 34.8020, "latitude": 50.9075}, "label": "A", "name": "Node A"},
+    {"id": "D", "location": {"longitude": 34.8100, "latitude": 50.8950}, "label": "D", "name": "Node D"},
+    {"id": "E", "location": {"longitude": 34.7800, "latitude": 50.9300}, "label": "E", "name": "Node E"},
+    {"id": "F", "location": {"longitude": 34.7600, "latitude": 50.9200}, "label": "F", "name": "Node F"},
+    {"id": "G", "location": {"longitude": 34.7950, "latitude": 50.9100}, "label": "G", "name": "Node G"},
+    {"id": "H", "location": {"longitude": 34.8150, "latitude": 50.9050}, "label": "H", "name": "Node H"},
+    {"id": "I", "location": {"longitude": 34.8500, "latitude": 50.9250}, "label": "I", "name": "Node I"},
+    {"id": "J", "location": {"longitude": 34.7850, "latitude": 50.9000}, "label": "J", "name": "Node J"},
+    {"id": "K", "location": {"longitude": 34.8200, "latitude": 50.8850}, "label": "K", "name": "Node K"},
+    {"id": "L", "location": {"longitude": 34.7750, "latitude": 50.8950}, "label": "L", "name": "Node L"},
+    {"id": "N", "location": {"longitude": 34.8300, "latitude": 50.9150}, "label": "N", "name": "Node N"},
+    {"id": "O", "location": {"longitude": 34.7900, "latitude": 50.8800}, "label": "O", "name": "Node O"},
+    {"id": "P", "location": {"longitude": 34.8350, "latitude": 50.9000}, "label": "P", "name": "Node P"},
+    {"id": "Q", "location": {"longitude": 34.8200, "latitude": 50.9300}, "label": "Q", "name": "Node Q"},
+    {"id": "R", "location": {"longitude": 34.7800, "latitude": 50.8850}, "label": "R", "name": "Node R"},
+    {"id": "S", "location": {"longitude": 34.7780, "latitude": 50.9150}, "label": "S", "name": "Node S"}
+  ],
+  "links": [
+    {"source": "A", "target": "G", "target_tq": 0.94, "source_tq": 0.93, "color": "#00E676", "label": "A-G"},
+    {"source": "A", "target": "H", "target_tq": 0.90, "source_tq": 0.89, "color": "#4CAF50", "label": "A-H"},
+    {"source": "A", "target": "N", "target_tq": 0.80, "source_tq": 0.79, "color": "#FF9800", "label": "A-N"},
+
+    {"source": "G", "target": "J", "target_tq": 0.91, "source_tq": 0.90, "color": "#4CAF50", "label": "G-J"},
+    {"source": "G", "target": "S", "target_tq": 0.93, "source_tq": 0.92, "color": "#00E676", "label": "G-S"},
+
+    {"source": "H", "target": "N", "target_tq": 0.90, "source_tq": 0.89, "color": "#4CAF50", "label": "H-N"},
+    {"source": "H", "target": "P", "target_tq": 0.91, "source_tq": 0.90, "color": "#4CAF50", "label": "H-P"},
+    {"source": "H", "target": "Q", "target_tq": 0.81, "source_tq": 0.80, "color": "#FF9800", "label": "H-Q"},
+
+    {"source": "D", "target": "H", "target_tq": 0.91, "source_tq": 0.90, "color": "#4CAF50", "label": "D-H"},
+    {"source": "D", "target": "J", "target_tq": 0.89, "source_tq": 0.88, "color": "#4CAF50", "label": "D-J"},
+    {"source": "D", "target": "K", "target_tq": 0.85, "source_tq": 0.84, "color": "#FFC107", "label": "D-K"},
+
+    {"source": "E", "target": "S", "target_tq": 0.91, "source_tq": 0.90, "color": "#4CAF50", "label": "E-S"},
+    {"source": "E", "target": "F", "target_tq": 0.90, "source_tq": 0.89, "color": "#4CAF50", "label": "E-F"},
+    {"source": "E", "target": "G", "target_tq": 0.84, "source_tq": 0.83, "color": "#FFC107", "label": "E-G"},
+
+    {"source": "F", "target": "S", "target_tq": 0.92, "source_tq": 0.91, "color": "#00E676", "label": "F-S"},
+
+    {"source": "S", "target": "J", "target_tq": 0.90, "source_tq": 0.89, "color": "#4CAF50", "label": "S-J"},
+
+    {"source": "J", "target": "L", "target_tq": 0.94, "source_tq": 0.93, "color": "#00E676", "label": "J-L"},
+    {"source": "J", "target": "R", "target_tq": 0.91, "source_tq": 0.90, "color": "#4CAF50", "label": "J-R"},
+
+    {"source": "L", "target": "R", "target_tq": 0.94, "source_tq": 0.93, "color": "#00E676", "label": "L-R"},
+    {"source": "R", "target": "O", "target_tq": 0.91, "source_tq": 0.90, "color": "#4CAF50", "label": "R-O"},
+
+    {"source": "K", "target": "O", "target_tq": 0.86, "source_tq": 0.85, "color": "#FFC107", "label": "K-O"},
+    {"source": "K", "target": "P", "target_tq": 0.89, "source_tq": 0.88, "color": "#4CAF50", "label": "K-P"},
+
+    {"source": "N", "target": "Q", "target_tq": 0.90, "source_tq": 0.89, "color": "#4CAF50", "label": "N-Q"},
+    {"source": "I", "target": "N", "target_tq": 0.89, "source_tq": 0.88, "color": "#4CAF50", "label": "I-N"},
+    {"source": "I", "target": "P", "target_tq": 0.80, "source_tq": 0.79, "color": "#FF9800", "label": "I-P"}
+  ]
+}
