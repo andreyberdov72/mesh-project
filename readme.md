@@ -31,7 +31,7 @@
 | `openwrt-generator/topology.json` | Файл топології мережі: опис вузлів (id, координати) та зв'язків (Ethernet – сині, Wi-Fi – зелені) |
 | **openwrt-generator/templates/** | Jinja2 шаблони конфігураційних файлів OpenWrt |
 | `templates/batman-adv.j2` | Налаштування Batman-adv: інтерфейси, що входять у bat0, алгоритм маршрутизації BATMAN_IV |
-| `templates/dropbear.j2` | Конфігурація SSH-сервера Dropbear: вимкнено вхід за паролем, лише за ключами, слухає на LAN |
+| `templates/dropbear.j2` | Конфігурація SSH-сервера Dropbear: вимкнено вхід за паролем, лише за ключами |
 | `templates/firewall.j2` | Правила фаєрволу: дозволено SSH, заборонено переадресацію, LAN-зона об'єднує bat0, wlan, lan |
 | `templates/network.j2` | Мережеві інтерфейси: налаштування switch (активні порти), lan (bridge), wlan, bat0 зі статичною IP-адресою |
 | `templates/system.j2` | Системні параметри: hostname вузла, часовий пояс UTC |
