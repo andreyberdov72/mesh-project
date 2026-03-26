@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+myvenv/
+*.log
+
+# Another projects
+bulk-flasher/tftp-now
+meshnet-lab/
+MeshGraphViewer/
+openwt-generator/openwrt-imagebuilder-*/
+
+# Temporary files
+bulk-flasher/tftp_temp/
+*.swp
+
+# Generated configs and roms
+openwrt-generator/bin/
+openwrt-generator/configs/
+
+# SSH
+**/keys/
+**/*_rsa
+**/*_rsa.pub
