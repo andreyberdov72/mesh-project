@@ -1,0 +1,38 @@
+# English translation for Mesh-project documentation index.
+# Copyright (C) 2026, Steblyna Yurii
+# This file is distributed under the same license as the Mesh-project package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mesh-project \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-27 20:41+0200\n"
+"PO-Revision-Date: 2026-03-27 20:43+0200\n"
+"Last-Translator: Steblyna Yurii\n"
+"Language: en\n"
+"Language-Team: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../index.rst:14
+msgid "Зміст:"
+msgstr "Contents:"
+
+#: ../../index.rst:7
+msgid "Mesh-project documentation"
+msgstr "Mesh-project documentation"
+
+#: ../../index.rst:9
+msgid ""
+"Add your content using ``reStructuredText`` syntax. See the "
+"`reStructuredText <https://www.sphinx-"
+"doc.org/en/master/usage/restructuredtext/index.html>`_ documentation for "
+"details."
+msgstr ""
+"Add your content using ``reStructuredText`` syntax. See the "
+"`reStructuredText <https://www.sphinx-"
+"doc.org/en/master/usage/restructuredtext/index.html>`_ documentation for "
+"details."

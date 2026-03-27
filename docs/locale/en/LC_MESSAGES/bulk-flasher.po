@@ -1,0 +1,92 @@
+# English translation for bulk-flasher documentation.
+# Copyright (C) 2026, Steblyna Yurii
+# This file is distributed under the same license as the Mesh-project package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mesh-project \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-27 20:41+0200\n"
+"PO-Revision-Date: 2026-03-27 20:43+0200\n"
+"Last-Translator: Steblyna Yurii\n"
+"Language: en\n"
+"Language-Team: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../bulk-flasher.rst:2
+msgid "Bulk Flasher"
+msgstr "Bulk Flasher"
+
+#: flasher:1 of
+msgid ""
+"Прошивка роутерів TP-Link TL-WR840N v4 через TFTP з використанням tftp-"
+"now. Сервер запускається один раз на всіх інтерфейсах (0.0.0.0:69). "
+"Прошивки: папка ../openwrt-generator/bin/<node>/*tftp-recovery*.bin"
+msgstr ""
+"Flashes TP-Link TL-WR840N v4 routers over TFTP using tftp-now. The "
+"server is started once on all interfaces (0.0.0.0:69). Firmware files are "
+"located in ../openwrt-generator/bin/<node>/*tftp-recovery*.bin"
+
+#: flasher.main:1 of
+msgid "Основна функція скрипта прошивки."
+msgstr "Main function of the flashing script."
+
+#: flasher.main:3 of
+msgid "Виконує такі кроки:"
+msgstr "Performs the following steps:"
+
+#: flasher.main:4 of
+msgid "Перевіряє наявність виконуваного файлу tftp-now."
+msgstr "Checks for the tftp-now executable."
+
+#: flasher.main:5 of
+msgid ""
+"Визначає шлях до папки з прошивками (аргумент командного рядка або за "
+"замовчуванням)."
+msgstr ""
+"Determines the path to the firmware directory (from command-line argument "
+"or default)."
+
+#: flasher.main:6 of
+msgid "Створює тимчасову папку в /tmp для файлу tp_recovery.bin."
+msgstr "Creates a temporary directory in /tmp for the tp_recovery.bin file."
+
+#: flasher.main:7 of
+msgid "Запускає TFTP-сервер один раз (через sudo) із коренем у тимчасовій папці."
+msgstr "Starts the TFTP server once (via sudo) with the root in the temp directory."
+
+#: flasher.main:8 of
+msgid "Для кожного вузла:"
+msgstr "For each node:"
+
+#: flasher.main:9 of
+msgid "Копіює файл із *tftp-recovery*.bin як tp_recovery.bin."
+msgstr "Copies the *tftp-recovery*.bin file as tp_recovery.bin."
+
+#: flasher.main:10 of
+msgid "Чекає на натискання Enter після завершення прошивки."
+msgstr "Waits for the user to press Enter after flashing is complete."
+
+#: flasher.main:11 of
+msgid "Зупиняє сервер і видаляє тимчасову папку."
+msgstr "Stops the server and removes the temporary directory."
+
+#: flasher.main:13 of
+msgid "Поведінка залежить від аргументів командного рядка:"
+msgstr "Behaviour depends on command-line arguments:"
+
+#: flasher.main:14 of
+msgid "Якщо передано один аргумент, він вважається шляхом до папки bin."
+msgstr "If one argument is provided, it is treated as the path to the bin folder."
+
+#: flasher.main:15 of
+msgid "Якщо аргументів немає, використовується ../openwrt-generator/bin."
+msgstr "If no arguments are given, ../openwrt-generator/bin is used."
+
+#: flasher.main:17 of
+msgid "Вимагає права sudo для запуску tftp-now на порту 69."
+msgstr "Requires sudo privileges to start tftp-now on port 69."

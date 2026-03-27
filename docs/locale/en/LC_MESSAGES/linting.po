@@ -1,0 +1,110 @@
+# English translation for linting documentation.
+# Copyright (C) 2026, Steblyna Yurii
+# This file is distributed under the same license as the Mesh-project package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mesh-project \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-27 20:41+0200\n"
+"PO-Revision-Date: 2026-03-27 20:43+0200\n"
+"Last-Translator: Steblyna Yurii\n"
+"Language: en\n"
+"Language-Team: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../linting.md:1
+msgid "Лінтинг у проєкті"
+msgstr "Linting in the project"
+
+#: ../../linting.md:3
+msgid "Використовувані інструменти"
+msgstr "Tools used"
+
+#: ../../linting.md:5
+msgid "**flake8** – базовий лінтер для перевірки стилю та логічних помилок."
+msgstr "**flake8** – basic linter for style and logical errors checking."
+
+#: ../../linting.md:6
+msgid "**pylint** – глибокий аналіз коду (іменування, складність, дублювання)."
+msgstr "**pylint** – deep code analysis (naming, complexity, duplication)."
+
+#: ../../linting.md:7
+msgid ""
+"**bandit** – перевірка безпеки (виявлення потенційно небезпечних "
+"конструкцій)."
+msgstr "**bandit** – security check (detection of potentially dangerous constructs)."
+
+#: ../../linting.md:9
+msgid "Причини вибору"
+msgstr "Reasons for choice"
+
+#: ../../linting.md:11
+msgid ""
+"**flake8** швидкий і простий у налаштуванні, покриває основні правила "
+"PEP8."
+msgstr "**flake8** is fast and easy to configure, covers basic PEP8 rules."
+
+#: ../../linting.md:12
+msgid ""
+"**pylint** надає розширені перевірки, які допомагають підтримувати високу"
+" якість коду."
+msgstr "**pylint** provides advanced checks that help maintain high code quality."
+
+#: ../../linting.md:13
+msgid ""
+"**bandit** забезпечує додатковий рівень безпеки, що важливо для скриптів,"
+" які працюють з системними викликами."
+msgstr "**bandit** provides an additional layer of security, which is important for scripts that work with system calls."
+
+#: ../../linting.md:15
+msgid "Налаштування"
+msgstr "Configuration"
+
+#: ../../linting.md:17
+msgid "Конфігураційні файли знаходяться в корені проєкту:"
+msgstr "Configuration files are located in the project root:"
+
+#: ../../linting.md:19
+msgid "`.flake8`"
+msgstr "`.flake8`"
+
+#: ../../linting.md:20
+msgid "`.pylintrc`"
+msgstr "`.pylintrc`"
+
+#: ../../linting.md:21
+msgid "`.bandit`"
+msgstr "`.bandit`"
+
+#: ../../linting.md:23
+msgid "Основні правила:"
+msgstr "Basic rules:"
+
+#: ../../linting.md:24
+msgid "Максимальна довжина рядка: **100 символів**."
+msgstr "Maximum line length: **100 characters**."
+
+#: ../../linting.md:25
+msgid ""
+"Ігноруються директорії: `myvenv`, `bin`, `tftp_temp`, `keys`, `tftp-now`,"
+" `openwrt-image-builder`, `MeshGraphViewer`, `meshnet-lab`"
+msgstr "Ignored directories: `myvenv`, `bin`, `tftp_temp`, `keys`, `tftp-now`, `openwrt-image-builder`, `MeshGraphViewer`, `meshnet-lab`"
+
+#: ../../linting.md:26
+msgid ""
+"Вимкнені деякі повідомлення pylint (докстрінги, надто мало публічних "
+"методів) для зменшення шуму."
+msgstr "Some pylint messages (docstrings, too few public methods) are disabled to reduce noise."
+
+#: ../../linting.md:28
+msgid "Запуск лінтерів"
+msgstr "Running linters"
+
+#: ../../linting.md:30
+msgid "Локально (вручну)"
+msgstr "Locally (manually)"

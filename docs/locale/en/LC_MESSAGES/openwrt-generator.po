@@ -1,0 +1,146 @@
+# English translation for openwrt-generator documentation.
+# Copyright (C) 2026, Steblyna Yurii
+# This file is distributed under the same license as the Mesh-project package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mesh-project \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-27 20:41+0200\n"
+"PO-Revision-Date: 2026-03-27 20:43+0200\n"
+"Last-Translator: Steblyna Yurii\n"
+"Language: en\n"
+"Language-Team: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../openwrt-generator.rst:2
+msgid "OpenWrt Config Generator"
+msgstr "OpenWrt Config Generator"
+
+#: generate_configs.build_ethernet_ports:1 of
+msgid ""
+"Determines which Ethernet ports need to be activated on each node, based "
+"on the topology of blue (wired) links."
+msgstr ""
+"Determines which Ethernet ports need to be activated on each node, based "
+"on the topology of blue (wired) links."
+
+#: generate_configs.build_ethernet_ports:1 of
+msgid ""
+"Визначає, які Ethernet-порти потрібно активувати на кожному вузлі, "
+"ґрунтуючись на топології синіх (дротових) зв'язків."
+msgstr ""
+"Determines which Ethernet ports need to be activated on each node, based "
+"on the topology of blue (wired) links."
+
+#: ../../openwrt-generator.rst generate_configs.build_ethernet_ports:3 of
+msgid "Parameters"
+msgstr "Parameters"
+
+#: generate_configs.build_ethernet_ports:4 of
+msgid "Список словників із даними про вузли (ключ \"id\")."
+msgstr "A list of node dictionaries (key \"id\")."
+
+#: generate_configs.build_ethernet_ports:5 of
+msgid "Список словників зв'язків (ключі \"source\", \"target\", \"color\")."
+msgstr "A list of link dictionaries (keys \"source\", \"target\", \"color\")."
+
+#: ../../openwrt-generator.rst generate_configs.build_ethernet_ports:7 of
+msgid "Returns"
+msgstr "Returns"
+
+#: generate_configs.build_ethernet_ports:8 of
+msgid ""
+"Словник, де ключ — id вузла, значення — список номерів портів, які треба "
+"активувати (нумерація з 1). Якщо вузол не має дротових сусідів, повертає "
+"порожній список."
+msgstr ""
+"A dictionary where the key is the node id, and the value is a list of "
+"port numbers to activate (1-indexed). Returns an empty list if the node "
+"has no wired neighbors."
+
+#: ../../openwrt-generator.rst generate_configs.build_ethernet_ports:10 of
+msgid "Return type"
+msgstr "Return type"
+
+#: ../../openwrt-generator.rst generate_configs.build_ethernet_ports:14 of
+msgid "Example"
+msgstr "Example"
+
+#: generate_configs.build_wifi_mesh_links:1 of
+msgid ""
+"Запускає OpenWrt Image Builder для кожного вузла, створюючи прошивки у "
+"папці bin/<node_id>. Після збірки перейменовує .bin файли, додаючи суфікс "
+"імені вузла."
+msgstr ""
+"Runs the OpenWrt Image Builder for each node, producing firmware files in "
+"the bin/<node_id> folder. After the build, renames the .bin files by "
+"appending the node name as a suffix."
+
+#: generate_configs.build_wifi_mesh_links:5 of
+msgid "Шлях до директорії з Image Builder (містить Makefile)."
+msgstr "Path to the Image Builder directory (containing the Makefile)."
+
+#: generate_configs.build_wifi_mesh_links:6 of
+msgid ""
+"Директорія, де зберігаються згенеровані конфігураційні файли (структура "
+"output_dir/<node_id>/etc/config)."
+msgstr ""
+"Directory where the generated configuration files are stored (structure "
+"output_dir/<node_id>/etc/config)."
+
+#: ../../openwrt-generator.rst
+msgid "Raises"
+msgstr "Raises"
+
+#: generate_configs.build_wifi_mesh_links:9 of
+msgid "Якщо команда make завершилася з помилкою."
+msgstr "If the make command exits with an error."
+
+#: generate_configs.build_wifi_mesh_links:10 of
+msgid "Якщо Image Builder не знайдено."
+msgstr "If the Image Builder directory is not found."
+
+#: generate_configs.build_wifi_mesh_links:12 of
+msgid "Примітки:"
+msgstr "Notes:"
+
+#: generate_configs.build_wifi_mesh_links:13 of
+msgid ""
+"Функція покладається на глобальні змінні PROFILE, PACKAGES. У процесі "
+"збірки тимчасово змінюється поточний каталог (cwd)."
+msgstr ""
+"The function relies on the global variables PROFILE and PACKAGES. The "
+"current working directory is temporarily changed during the build."
+
+#: generate_configs.generate_mesh_key:1 of
+msgid "Генерує унікальний ключ шифрування для mesh-з'єднання між двома вузлами."
+msgstr "Generates a unique encryption key for a mesh link between two nodes."
+
+#: generate_configs.generate_mesh_key:3 of
+msgid ""
+"Ключ створюється на основі імен вузлів та фіксованої солі, щоб "
+"забезпечити детерміноване, але унікальне значення для кожної пари."
+msgstr ""
+"The key is derived from the node names and a fixed salt to produce a "
+"deterministic yet unique value for each pair."
+
+#: generate_configs.generate_mesh_key:6 of
+msgid "Ідентифікатор першого вузла (наприклад, \"A1\")."
+msgstr "Identifier of the first node (e.g. \"A1\")."
+
+#: generate_configs.generate_mesh_key:7 of
+msgid "Ідентифікатор другого вузла."
+msgstr "Identifier of the second node."
+
+#: generate_configs.generate_mesh_key:9 of
+msgid "Рядок із 32 шістнадцятковими символами — ключ PSK для 802.11s."
+msgstr "A 32-character hexadecimal string — the PSK key for 802.11s."
+
+#: generate_configs.render_config_file:1 of
+msgid "Helper to render a template and write to a file."
+msgstr "Helper to render a template and write to a file."

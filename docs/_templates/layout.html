@@ -1,0 +1,19 @@
+{% extends "!layout.html" %}
+
+{% block navigation %}
+  {{ super() }}
+
+  {% if display_language_switcher %}
+    <div style="padding: 10px; margin-top: 20px; text-align: center; background: #2980b9; color: white;">
+      <i class="fa fa-language" aria-hidden="true"></i> <strong>Мова / Language</strong><br/>
+      {% for lang_code, lang_name in languages %}
+        {% if lang_code == language %}
+          <span style="font-weight: bold; text-decoration: underline; padding: 0 5px;">{{ lang_name }}</span>
+        {% else %}
+          <a href="{{ pathto('../' ~ lang_code ~ '/' ~ pagename ~ '.html', 1) }}" style="color: #e0e0e0; padding: 0 5px;">{{ lang_name }}</a>
+        {% endif %}
+        {% if not loop.last %} | {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}

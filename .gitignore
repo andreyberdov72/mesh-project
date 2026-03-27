@@ -22,3 +22,6 @@ openwrt-generator/configs/
 **/keys/
 **/*_rsa
 **/*_rsa.pub
+
+# Docs
+docs/_build/
