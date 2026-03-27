@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 100
+exclude = .git,__pycache__,myvenv,bin,tftp_temp,keys,tftp-now,MeshGraphViewer,meshnet-lab,topologies,openwrt-imagebuilder-25.12.1-ramips-mt76x8.Linux-x86_64
+ignore = E203, W503

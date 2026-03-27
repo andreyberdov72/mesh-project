@@ -1,0 +1,9 @@
+[MASTER]
+ignore=myvenv,bin,tftp_temp,keys,tftp-now,MeshGraphViewer,meshnet-lab,topologies
+fail-under=8.0
+
+[MESSAGES CONTROL]
+disable=C0114,C0115,C0116,R0903  # відключити докстрінги для модулів/класів/функцій, надто мало публічних методів
+
+[FORMAT]
+max-line-length=100
