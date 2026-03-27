@@ -20,4 +20,5 @@ documentation for details.
    architecture
    linting
    generate_docs
+   deployment
 
