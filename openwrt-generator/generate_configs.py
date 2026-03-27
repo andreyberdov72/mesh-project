@@ -24,7 +24,24 @@ PACKAGES = (
 # ------------------------------------------------------------
 # Functions
 # ------------------------------------------------------------
-def generate_mesh_key(node1, node2):
+def generate_mesh_key(node1: str, node2: str) -> str:
+    """
+    Генерує унікальний ключ шифрування для mesh-з'єднання між двома вузлами.
+
+    Ключ створюється на основі імен вузлів та фіксованої солі, щоб забезпечити
+    детерміноване, але унікальне значення для кожної пари.
+
+    Args:
+        node1: Ідентифікатор першого вузла (наприклад, "A1").
+        node2: Ідентифікатор другого вузла.
+
+    Returns:
+        Рядок із 32 шістнадцятковими символами — ключ PSK для 802.11s.
+
+    Example:
+        >>> generate_mesh_key("A1", "B1")
+        '258577f4cc1a59ad270a437076d83e4e'
+    """
     salt = "openwrt_mesh"
     return hashlib.sha256(f"{node1}{node2}{salt}".encode()).hexdigest()[:32]
 
@@ -35,6 +52,25 @@ def assign_ips(nodes):
 
 
 def build_ethernet_ports(nodes, links):
+    """
+    Визначає, які Ethernet-порти потрібно активувати на кожному вузлі,
+    ґрунтуючись на топології синіх (дротових) зв'язків.
+
+    Args:
+        nodes: Список словників із даними про вузли (ключ "id").
+        links: Список словників зв'язків (ключі "source", "target", "color").
+
+    Returns:
+        Словник, де ключ — id вузла, значення — список номерів портів,
+        які треба активувати (нумерація з 1). Якщо вузол не має дротових сусідів,
+        повертає порожній список.
+
+    Example:
+        >>> nodes = [{"id": "A1"}, {"id": "A2"}]
+        >>> links = [{"source": "A1", "target": "A2", "color": "blue"}]
+        >>> build_ethernet_ports(nodes, links)
+        {'A1': [1], 'A2': [1]}
+    """
     eth_links = [link for link in links if link["color"] == "blue"]
     graph = defaultdict(list)
     for link in eth_links:
@@ -51,6 +87,24 @@ def build_ethernet_ports(nodes, links):
 
 
 def build_wifi_mesh_links(links):
+    """
+    Запускає OpenWrt Image Builder для кожного вузла, створюючи прошивки
+    у папці bin/<node_id>. Після збірки перейменовує .bin файли, додаючи суфікс
+    імені вузла.
+
+    Args:
+        image_builder_dir: Шлях до директорії з Image Builder (містить Makefile).
+        output_dir: Директорія, де зберігаються згенеровані конфігураційні файли
+                    (структура output_dir/<node_id>/etc/config).
+
+    Raises:
+        CalledProcessError: Якщо команда make завершилася з помилкою.
+        FileNotFoundError: Якщо Image Builder не знайдено.
+
+    Примітки:
+        Функція покладається на глобальні змінні PROFILE, PACKAGES.
+        У процесі збірки тимчасово змінюється поточний каталог (cwd).
+    """
     wifi_links = [link for link in links if link["color"] == "#4CAF50"]
     node_mesh = {}
     for link in wifi_links:
