@@ -2,3 +2,7 @@
 max-line-length = 100
 exclude = .git,__pycache__,myvenv,bin,tftp_temp,keys,tftp-now,MeshGraphViewer,meshnet-lab,topologies,openwrt-imagebuilder-25.12.1-ramips-mt76x8.Linux-x86_64
 ignore = E203, W503
+# Enforce docstring quality (flake8-docstrings / pydocstyle)
+# D100, D103 ignore missing docstring in public module and magic methods
+extend-ignore = D100, D104, D105, D107
+docstring-convention = google

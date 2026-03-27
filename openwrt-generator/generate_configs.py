@@ -47,6 +47,24 @@ def generate_mesh_key(node1: str, node2: str) -> str:
 
 
 def assign_ips(nodes):
+    """
+    Призначає статичні IP-адреси вузлам на основі їхнього ідентифікатора.
+
+    Адреси призначаються послідовно (починаючи з X.X.X.1) після сортування
+    вузлів за їхнім ідентифікатором за алфавітом. Це гарантує детермінованість
+    розподілу адрес при повторних запусках генератора.
+
+    Args:
+        nodes: Список словників із даними про вузли, де обов'язковим є ключ "id".
+
+    Returns:
+        Словник, де ключ — ідентифікатор вузла, а значення — його статична IP-адреса.
+
+    Example:
+        >>> nodes = [{"id": "NodeB"}, {"id": "NodeA"}]
+        >>> assign_ips(nodes)
+        {'NodeA': '10.0.0.1', 'NodeB': '10.0.0.2'}
+    """
     sorted_nodes = sorted(nodes, key=lambda n: n["id"])
     return {node["id"]: f"{IP_SUBNET}{i+1}" for i, node in enumerate(sorted_nodes)}
 
@@ -88,22 +106,20 @@ def build_ethernet_ports(nodes, links):
 
 def build_wifi_mesh_links(links):
     """
-    Запускає OpenWrt Image Builder для кожного вузла, створюючи прошивки
-    у папці bin/<node_id>. Після збірки перейменовує .bin файли, додаючи суфікс
-    імені вузла.
+    Аналізує зелені (безпровідні) зв'язки графа топології та генерує
+    ідентифікатори і ключі шифрування для 802.11s mesh-мереж.
 
     Args:
-        image_builder_dir: Шлях до директорії з Image Builder (містить Makefile).
-        output_dir: Директорія, де зберігаються згенеровані конфігураційні файли
-                    (структура output_dir/<node_id>/etc/config).
+        links: Список словників зв'язків з топології (з ключами "source", "target", "color").
 
-    Raises:
-        CalledProcessError: Якщо команда make завершилася з помилкою.
-        FileNotFoundError: Якщо Image Builder не знайдено.
+    Returns:
+        Словник, де ключ — ідентифікатор вузла, а значення — словник
+        з 'mesh_id' та 'mesh_key' для його Wi-Fi інтерфейсу.
 
-    Примітки:
-        Функція покладається на глобальні змінні PROFILE, PACKAGES.
-        У процесі збірки тимчасово змінюється поточний каталог (cwd).
+    Example:
+        >>> links = [{"source": "A", "target": "B", "color": "#4CAF50"}]
+        >>> build_wifi_mesh_links(links)
+        {'A': {'mesh_id': 'mesh-A-B', 'mesh_key': '8d78b5ee6d2c905261337fc22767b6a4'}, 'B': {'mesh_id': 'mesh-A-B', 'mesh_key': '8d78b5ee6d2c905261337fc22767b6a4'}}
     """
     wifi_links = [link for link in links if link["color"] == "#4CAF50"]
     node_mesh = {}

@@ -17,5 +17,7 @@ documentation for details.
 
    openwrt-generator
    bulk-flasher
+   architecture
    linting
+   generate_docs
 

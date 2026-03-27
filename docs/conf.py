@@ -22,6 +22,8 @@ release = '0.1'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
+    'sphinx.ext.doctest',
+    'sphinx.ext.viewcode',
     'myst_parser',
 ]
 
@@ -38,6 +40,13 @@ gettext_compact = False
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+doctest_global_setup = '''
+import sys
+import os
+sys.path.insert(0, os.path.abspath('../openwrt-generator'))
+from generate_configs import assign_ips, build_ethernet_ports, build_wifi_mesh_links, generate_mesh_key
+'''
 
 html_context = {
     'display_language_switcher': True,
