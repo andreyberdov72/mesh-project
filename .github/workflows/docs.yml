@@ -53,6 +53,7 @@ jobs:
             </body>
           </html>
           EOF
+          touch docs/_build/html/.nojekyll
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
