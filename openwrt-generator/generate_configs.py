@@ -4,6 +4,7 @@ import os
 import sys
 import hashlib
 import subprocess
+import shutil
 from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader
 
@@ -15,7 +16,10 @@ IP_SUBNET = "10.0.0."
 WIFI_CHANNEL = 6
 IMAGE_BUILDER_DIR = "./openwrt-imagebuilder-25.12.1-ramips-mt76x8.Linux-x86_64"
 PROFILE = "tplink_tl-wr840n-v4"
-PACKAGES = "batctl kmod-batman-adv dropbear wpad-mesh-wolfssl -wpad-basic-mbedtls -dnsmasq -odhcpd -odhcp6c -ppp -ppp-mod-pppoe"
+PACKAGES = (
+    "batctl kmod-batman-adv dropbear wpad-mesh-wolfssl -wpad-basic-mbedtls "
+    "-dnsmasq -odhcpd -odhcp6c -ppp -ppp-mod-pppoe"
+)
 
 # ------------------------------------------------------------
 # Functions
@@ -24,27 +28,30 @@ def generate_mesh_key(node1, node2):
     salt = "openwrt_mesh"
     return hashlib.sha256(f"{node1}{node2}{salt}".encode()).hexdigest()[:32]
 
+
 def assign_ips(nodes):
     sorted_nodes = sorted(nodes, key=lambda n: n["id"])
     return {node["id"]: f"{IP_SUBNET}{i+1}" for i, node in enumerate(sorted_nodes)}
 
+
 def build_ethernet_ports(nodes, links):
-    eth_links = [l for l in links if l["color"] == "blue"]
+    eth_links = [link for link in links if link["color"] == "blue"]
     graph = defaultdict(list)
     for link in eth_links:
         graph[link["source"]].append(link["target"])
         graph[link["target"]].append(link["source"])
-    
+
     node_ports = {}
     for node in nodes:
         node_id = node["id"]
         neighbors = graph.get(node_id, [])
-        active_ports = list(range(1, len(neighbors)+1))
+        active_ports = list(range(1, len(neighbors) + 1))
         node_ports[node_id] = active_ports
     return node_ports
 
+
 def build_wifi_mesh_links(links):
-    wifi_links = [l for l in links if l["color"] == "#4CAF50"]
+    wifi_links = [link for link in links if link["color"] == "#4CAF50"]
     node_mesh = {}
     for link in wifi_links:
         src, tgt = link["source"], link["target"]
@@ -54,16 +61,21 @@ def build_wifi_mesh_links(links):
         node_mesh[tgt] = {"mesh_id": mesh_id, "mesh_key": mesh_key}
     return node_mesh
 
+
 def generate_ssh_keys(node_id, output_dir):
     key_dir = os.path.join(output_dir, "keys")
     os.makedirs(key_dir, exist_ok=True)
     priv_key = os.path.join(key_dir, f"{node_id}_id_rsa")
     pub_key = f"{priv_key}.pub"
     if not os.path.exists(priv_key):
-        subprocess.run(["ssh-keygen", "-t", "rsa", "-b", "2048", "-f", priv_key, "-N", "", "-q"], check=True)
-    with open(pub_key, 'r') as f:
+        subprocess.run(
+            ["ssh-keygen", "-t", "rsa", "-b", "2048", "-f", priv_key, "-N", "", "-q"],
+            check=True
+        )
+    with open(pub_key, 'r', encoding='utf-8') as f:
         pub = f.read().strip()
     return pub
+
 
 def build_images(image_builder_dir, output_dir):
     if not os.path.isdir(image_builder_dir):
@@ -95,11 +107,19 @@ def build_images(image_builder_dir, output_dir):
                 print(f"  Renamed {f} -> {new_name}")
         print(f"Built image for {node_id} in {bin_dir}")
 
+
 # ------------------------------------------------------------
-# Main func
+# Main
 # ------------------------------------------------------------
+def render_config_file(template, path, **kwargs):
+    """Helper to render a template and write to a file."""
+    content = template.render(**kwargs)
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+
 def main():
-    with open("topology.json", "r") as f:
+    with open("topology.json", "r", encoding='utf-8') as f:
         data = json.load(f)
     nodes = data["nodes"]
     links = data["links"]
@@ -119,7 +139,6 @@ def main():
     }
 
     if os.path.exists(OUTPUT_DIR):
-        import shutil
         shutil.rmtree(OUTPUT_DIR)
     os.makedirs(OUTPUT_DIR)
 
@@ -136,56 +155,65 @@ def main():
         os.makedirs(node_dir, exist_ok=True)
 
         # Network
-        network_conf = templates["network"].render(active_ports=active_ports, ip=ip)
-        with open(os.path.join(node_dir, "network"), "w") as f:
-            f.write(network_conf)
+        render_config_file(
+            templates["network"],
+            os.path.join(node_dir, "network"),
+            active_ports=active_ports,
+            ip=ip
+        )
 
         # Wireless
-        wireless_conf = templates["wireless"].render(
+        render_config_file(
+            templates["wireless"],
+            os.path.join(node_dir, "wireless"),
             channel=WIFI_CHANNEL,
             mesh_id=mesh["mesh_id"],
             mesh_key=mesh["mesh_key"]
         )
-        with open(os.path.join(node_dir, "wireless"), "w") as f:
-            f.write(wireless_conf)
 
         # Batman-adv
-        batman_conf = templates["batman-adv"].render()
-        with open(os.path.join(node_dir, "batman-adv"), "w") as f:
-            f.write(batman_conf)
+        render_config_file(
+            templates["batman-adv"],
+            os.path.join(node_dir, "batman-adv")
+        )
 
         # Firewall
-        firewall_conf = templates["firewall"].render()
-        with open(os.path.join(node_dir, "firewall"), "w") as f:
-            f.write(firewall_conf)
+        render_config_file(
+            templates["firewall"],
+            os.path.join(node_dir, "firewall")
+        )
 
         # System
-        system_conf = templates["system"].render(hostname=node_id)
-        with open(os.path.join(node_dir, "system"), "w") as f:
-            f.write(system_conf)
+        render_config_file(
+            templates["system"],
+            os.path.join(node_dir, "system"),
+            hostname=node_id
+        )
 
         # Dropbear
-        dropbear_conf = templates["dropbear"].render()
-        with open(os.path.join(node_dir, "dropbear"), "w") as f:
-            f.write(dropbear_conf)
+        render_config_file(
+            templates["dropbear"],
+            os.path.join(node_dir, "dropbear")
+        )
 
         # Authorized keys
         pub_key = generate_ssh_keys(node_id, OUTPUT_DIR)
         auth_keys_dir = os.path.join(OUTPUT_DIR, node_id, "etc", "dropbear")
         os.makedirs(auth_keys_dir, exist_ok=True)
-        with open(os.path.join(auth_keys_dir, "authorized_keys"), "w") as f:
+        with open(os.path.join(auth_keys_dir, "authorized_keys"), 'w', encoding='utf-8') as f:
             f.write(pub_key + "\n")
 
         print(f"Generated configs for {node_id}")
 
     print("\nMesh network parameters:")
-    for link in [l for l in links if l["color"] == "#4CAF50"]:
+    for link in [link for link in links if link["color"] == "#4CAF50"]:
         mesh_id = f"mesh-{link['source']}-{link['target']}"
         mesh_key = generate_mesh_key(link["source"], link["target"])
         print(f"{link['source']} ↔ {link['target']}: mesh_id={mesh_id}, key={mesh_key}")
 
     if "--build" in sys.argv:
         build_images(IMAGE_BUILDER_DIR, OUTPUT_DIR)
+
 
 if __name__ == "__main__":
     main()

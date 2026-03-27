@@ -13,6 +13,7 @@ import tempfile
 import shutil
 from pathlib import Path
 
+
 def main():
     # Шлях до tftp-now (поруч зі скриптом)
     script_dir = Path(__file__).parent.resolve()
@@ -44,7 +45,8 @@ def main():
         print("У папці bin немає підпапок з вузлами.")
         sys.exit(1)
 
-    print("Роутер шукатиме сервер за адресою 192.168.0.66:69. Переконайтеся, що інтерфейс має цю IP-адресу.\n")
+    print("Роутер шукатиме сервер за адресою 192.168.0.66:69. "
+          "Переконайтеся, що інтерфейс має цю IP-адресу.\n")
     print(f"Знайдено вузлів: {len(nodes)}")
 
     # Оновлюємо sudo, щоб пароль запитався один раз
@@ -54,6 +56,7 @@ def main():
         print("Не вдалося отримати права sudo. Переконайтеся, що sudo доступний.")
         sys.exit(1)
 
+    server_proc = None
     try:
         # Запускаємо сервер один раз на всіх адресах
         cmd = ["sudo", str(tftp_now), "serve", "-root", str(tftp_root), "-verbose"]
@@ -80,16 +83,17 @@ def main():
             input("Під'єднайте роутер через LAN, натисніть Reset, увімкніть, "
                   "дочекайтеся блимання, після перезавантаження натисніть Enter\n")
     finally:
-        # Зупиняємо сервер
-        server_proc.terminate()
-        try:
-            server_proc.wait(timeout=2)
-        except subprocess.TimeoutExpired:
-            server_proc.kill()
+        if server_proc:
+            server_proc.terminate()
+            try:
+                server_proc.wait(timeout=2)
+            except subprocess.TimeoutExpired:
+                server_proc.kill()
 
     # Видаляємо тимчасову папку
     shutil.rmtree(tftp_root, ignore_errors=True)
     print("\nУсі прошивки завантажено.")
+
 
 if __name__ == "__main__":
     main()
