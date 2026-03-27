@@ -25,6 +25,16 @@ if errorlevel 9009 (
 
 if "%1" == "" goto help
 
+if "%1" == "html" (
+	%SPHINXBUILD% -b html %SOURCEDIR% %BUILDDIR%/html/ua %SPHINXOPTS% %O%
+	goto end
+)
+
+if "%1" == "en" (
+	%SPHINXBUILD% -b html -D language=en %SOURCEDIR% %BUILDDIR%/html/en %SPHINXOPTS% %O%
+	goto end
+)
+
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
 
