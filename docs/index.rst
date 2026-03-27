@@ -21,4 +21,5 @@ documentation for details.
    linting
    generate_docs
    deployment
+   update
 
