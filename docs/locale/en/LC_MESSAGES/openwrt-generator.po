@@ -1,14 +1,15 @@
 # English translation for openwrt-generator documentation.
 # Copyright (C) 2026, Steblyna Yurii
-# This file is distributed under the same license as the Mesh-project package.
+# This file is distributed under the same license as the Mesh-project
+# package.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Mesh-project \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-27 20:41+0200\n"
-"PO-Revision-Date: 2026-03-27 20:43+0200\n"
-"Last-Translator: Steblyna Yurii\n"
+"POT-Creation-Date: 2026-03-27 22:39+0200\n"
+"PO-Revision-Date: 2026-03-27 22:45+0200\n"
+"Last-Translator: Antigravity\n"
 "Language: en\n"
 "Language-Team: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -21,13 +22,46 @@ msgstr ""
 msgid "OpenWrt Config Generator"
 msgstr "OpenWrt Config Generator"
 
-#: generate_configs.build_ethernet_ports:1 of
+#: generate_configs.assign_ips:1 of
+msgid "Призначає статичні IP-адреси вузлам на основі їхнього ідентифікатора."
+msgstr "Assigns static IP addresses to nodes based on their identifier."
+
+#: generate_configs.assign_ips:3 of
 msgid ""
-"Determines which Ethernet ports need to be activated on each node, based "
-"on the topology of blue (wired) links."
+"Адреси призначаються послідовно (починаючи з X.X.X.1) після сортування "
+"вузлів за їхнім ідентифікатором за алфавітом. Це гарантує "
+"детермінованість розподілу адрес при повторних запусках генератора."
 msgstr ""
-"Determines which Ethernet ports need to be activated on each node, based "
-"on the topology of blue (wired) links."
+"Addresses are assigned sequentially (starting from X.X.X.1) after sorting "
+"the nodes alphabetically by their identifier. This ensures deterministic "
+"address distribution during repeated generator runs."
+
+#: generate_configs.assign_ips generate_configs.build_ethernet_ports
+#: generate_configs.build_wifi_mesh_links generate_configs.generate_mesh_key of
+msgid "Parameters"
+msgstr "Parameters"
+
+#: generate_configs.assign_ips:7 of
+msgid "Список словників із даними про вузли, де обов'язковим є ключ \"id\"."
+msgstr "A list of node dictionaries, where the \"id\" key is mandatory."
+
+#: generate_configs.assign_ips generate_configs.build_ethernet_ports
+#: generate_configs.build_wifi_mesh_links generate_configs.generate_mesh_key of
+msgid "Returns"
+msgstr "Returns"
+
+#: generate_configs.assign_ips:9 of
+msgid ""
+"Словник, де ключ — ідентифікатор вузла, а значення — його статична "
+"IP-адреса."
+msgstr ""
+"A dictionary where the key is the node identifier and the value is its static IP address."
+
+#: generate_configs.assign_ips:12 generate_configs.build_ethernet_ports:12
+#: generate_configs.build_wifi_mesh_links:10
+#: generate_configs.generate_mesh_key:12 of
+msgid "Example"
+msgstr "Example"
 
 #: generate_configs.build_ethernet_ports:1 of
 msgid ""
@@ -37,10 +71,6 @@ msgstr ""
 "Determines which Ethernet ports need to be activated on each node, based "
 "on the topology of blue (wired) links."
 
-#: ../../openwrt-generator.rst generate_configs.build_ethernet_ports:3 of
-msgid "Parameters"
-msgstr "Parameters"
-
 #: generate_configs.build_ethernet_ports:4 of
 msgid "Список словників із даними про вузли (ключ \"id\")."
 msgstr "A list of node dictionaries (key \"id\")."
@@ -49,11 +79,7 @@ msgstr "A list of node dictionaries (key \"id\")."
 msgid "Список словників зв'язків (ключі \"source\", \"target\", \"color\")."
 msgstr "A list of link dictionaries (keys \"source\", \"target\", \"color\")."
 
-#: ../../openwrt-generator.rst generate_configs.build_ethernet_ports:7 of
-msgid "Returns"
-msgstr "Returns"
-
-#: generate_configs.build_ethernet_ports:8 of
+#: generate_configs.build_ethernet_ports:7 of
 msgid ""
 "Словник, де ключ — id вузла, значення — список номерів портів, які треба "
 "активувати (нумерація з 1). Якщо вузол не має дротових сусідів, повертає "
@@ -63,59 +89,26 @@ msgstr ""
 "port numbers to activate (1-indexed). Returns an empty list if the node "
 "has no wired neighbors."
 
-#: ../../openwrt-generator.rst generate_configs.build_ethernet_ports:10 of
-msgid "Return type"
-msgstr "Return type"
-
-#: ../../openwrt-generator.rst generate_configs.build_ethernet_ports:14 of
-msgid "Example"
-msgstr "Example"
-
 #: generate_configs.build_wifi_mesh_links:1 of
 msgid ""
-"Запускає OpenWrt Image Builder для кожного вузла, створюючи прошивки у "
-"папці bin/<node_id>. Після збірки перейменовує .bin файли, додаючи суфікс "
-"імені вузла."
+"Аналізує зелені (безпровідні) зв'язки графа топології та генерує "
+"ідентифікатори і ключі шифрування для 802.11s mesh-мереж."
 msgstr ""
-"Runs the OpenWrt Image Builder for each node, producing firmware files in "
-"the bin/<node_id> folder. After the build, renames the .bin files by "
-"appending the node name as a suffix."
+"Analyzes green (wireless) links of the topology graph and generates "
+"identifiers and encryption keys for 802.11s mesh networks."
 
-#: generate_configs.build_wifi_mesh_links:5 of
-msgid "Шлях до директорії з Image Builder (містить Makefile)."
-msgstr "Path to the Image Builder directory (containing the Makefile)."
+#: generate_configs.build_wifi_mesh_links:4 of
+msgid ""
+"Список словників зв'язків з топології (з ключами \"source\", \"target\", "
+"\"color\")."
+msgstr "A list of link dictionaries from the topology (with keys \"source\", \"target\", \"color\")."
 
 #: generate_configs.build_wifi_mesh_links:6 of
 msgid ""
-"Директорія, де зберігаються згенеровані конфігураційні файли (структура "
-"output_dir/<node_id>/etc/config)."
+"Словник, де ключ — ідентифікатор вузла, а значення — словник з 'mesh_id' "
+"та 'mesh_key' для його Wi-Fi інтерфейсу."
 msgstr ""
-"Directory where the generated configuration files are stored (structure "
-"output_dir/<node_id>/etc/config)."
-
-#: ../../openwrt-generator.rst
-msgid "Raises"
-msgstr "Raises"
-
-#: generate_configs.build_wifi_mesh_links:9 of
-msgid "Якщо команда make завершилася з помилкою."
-msgstr "If the make command exits with an error."
-
-#: generate_configs.build_wifi_mesh_links:10 of
-msgid "Якщо Image Builder не знайдено."
-msgstr "If the Image Builder directory is not found."
-
-#: generate_configs.build_wifi_mesh_links:12 of
-msgid "Примітки:"
-msgstr "Notes:"
-
-#: generate_configs.build_wifi_mesh_links:13 of
-msgid ""
-"Функція покладається на глобальні змінні PROFILE, PACKAGES. У процесі "
-"збірки тимчасово змінюється поточний каталог (cwd)."
-msgstr ""
-"The function relies on the global variables PROFILE and PACKAGES. The "
-"current working directory is temporarily changed during the build."
+"A dictionary where the key is the node identifier and the value is a dictionary with 'mesh_id' and 'mesh_key' for its Wi-Fi interface."
 
 #: generate_configs.generate_mesh_key:1 of
 msgid "Генерує унікальний ключ шифрування для mesh-з'єднання між двома вузлами."

@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Steblyna Yurii
+# This file is distributed under the same license as the Mesh-project
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mesh-project \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-27 22:39+0200\n"
+"PO-Revision-Date: 2026-03-27 22:40+0200\n"
+"Last-Translator: Antigravity\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../generate_docs.md:1
+msgid "Як генерувати документацію"
+msgstr "How to Generate Documentation"
+
+#: ../../generate_docs.md:3
+msgid ""
+"Цей проєкт використовує **Sphinx** для генерації документації з вихідного"
+" коду (завдяки рядкам документації) та Markdown/reStructuredText файлів. "
+"Документація підтримує багатомовність (українська та англійська)."
+msgstr ""
+"This project uses **Sphinx** to generate documentation from the source "
+"code (thanks to docstrings) and Markdown/reStructuredText files. "
+"The documentation supports multi-language (Ukrainian and English)."
+
+#: ../../generate_docs.md:5
+msgid "Необхідні інструменти"
+msgstr "Required Tools"
+
+#: ../../generate_docs.md:6
+msgid "Для локальної генерації документації необхідно встановити залежності:"
+msgstr "To generate documentation locally, you need to install dependencies:"
+
+#: ../../generate_docs.md:11
+msgid "Генерація HTML-документації"
+msgstr "HTML Documentation Generation"
+
+#: ../../generate_docs.md:12
+msgid ""
+"Для того, щоб зібрати документацію локально, скористайтеся інструментом "
+"`make` всередині папки `docs/`."
+msgstr ""
+"To build the documentation locally, use the `make` tool inside the `docs/` folder."
+
+#: ../../generate_docs.md:14
+msgid "1. Збірка українською мовою (Основна)"
+msgstr "1. Build in Ukrainian (Main)"
+
+#: ../../generate_docs.md:19
+msgid ""
+"Результат буде збережено у папці `docs/_build/html/ua/`. Вхідним файлом "
+"слугуватиме `index.html`."
+msgstr ""
+"The result will be saved in the `docs/_build/html/ua/` folder. The entry point is `index.html`."
+
+#: ../../generate_docs.md:21
+msgid "2. Збірка англійською мовою"
+msgstr "2. Build in English"
+
+#: ../../generate_docs.md:26
+msgid ""
+"Результат буде збережено у папці `docs/_build/html/en/`. Вхідним файлом "
+"слугуватиме `index.html`."
+msgstr ""
+"The result will be saved in the `docs/_build/html/en/` folder. The entry point is `index.html`."
+
+#: ../../generate_docs.md:28
+msgid "Перевірка якості (Лінтинг документації)"
+msgstr "Quality Check (Documentation Linting)"
+
+#: ../../generate_docs.md:29
+msgid ""
+"У цьому проєкті налаштовано сувору перевірку якості документації за "
+"допомогою `pydocstyle` та `Sphinx` (з режимом \"warnings as errors\")."
+msgstr ""
+"This project has strict documentation quality checks configured using `pydocstyle` and `Sphinx` (with \"warnings as errors\" mode)."
+
+#: ../../generate_docs.md:31
+msgid "Щоб вручну перевірити покриття коду документацією:"
+msgstr "To manually check documentation coverage:"
+
+#: ../../generate_docs.md:36
+msgid "Жива документація (Test-Driven Documentation)"
+msgstr "Live Documentation (Test-Driven Documentation)"
+
+#: ../../generate_docs.md:37
+msgid ""
+"Завдяки вбудованим `doctest` тестам у Python-коді, ви можете автоматично "
+"перевіряти, чи є приклади у документації робочими. Для цього виконайте:"
+msgstr ""
+"Thanks to built-in `doctest` tests in the Python code, you can automatically verify if documentation examples are working. To do this, run:"
+
+#: ../../generate_docs.md:43
+msgid ""
+"Це виконає всі приклади коду з документації як тести і повідомить, якщо "
+"вони застаріли."
+msgstr ""
+"This will run all code examples from the documentation as tests and report if they are outdated."

@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Steblyna Yurii
+# This file is distributed under the same license as the Mesh-project
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mesh-project \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-27 22:39+0200\n"
+"PO-Revision-Date: 2026-03-27 22:42+0200\n"
+"Last-Translator: Antigravity\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../architecture.md:1
+msgid "Архітектура проекту та прийняті рішення"
+msgstr "Project Architecture and Design Decisions"
+
+#: ../../architecture.md:3
+msgid ""
+"Цей документ пояснює внутрішню будову генератора, бізнес-логіку та "
+"ключові алгоритми."
+msgstr ""
+"This document explains the internal structure of the generator, business logic, and key algorithms."
+
+#: ../../architecture.md:5
+msgid "Взаємодія компонентів"
+msgstr "Component Interaction"
+
+#: ../../architecture.md:7
+msgid ""
+"Проєкт складається з двох основних модулів, які можуть працювати як "
+"самостійно, так і в зв'язці:"
+msgstr ""
+"The project consists of two main modules that can work both independently and together:"
+
+#: ../../architecture.md:9
+msgid ""
+"**OpenWrt Config Generator (`generate_configs.py`)** — \"Мозок\" системи."
+" Він виконує аналіз топології (JSON файлу) та за допомогою Jinja2 генерує"
+" індивідуальні налаштування мережі, фаєрволу, ключів шифрування та "
+"SSH-доступу для кожного пристрою."
+msgstr ""
+"**OpenWrt Config Generator (`generate_configs.py`)** — The \"brain\" of the system. "
+"It analyzes the topology (JSON file) and uses Jinja2 to generate individual settings "
+"for the network, firewall, encryption keys, and SSH access for each device."
+
+#: ../../architecture.md:10
+msgid ""
+"**Bulk Flasher (`flasher.py`)** — Мобільний виконавець. Скрипт "
+"автоматизує нудний процес прошивки. Він слухає конкретну адресу в "
+"локальній мережі, грає роль TFTP-сервера (через `tftp-now`), реагуючи на "
+"автоматичні запити роутера в режимі Recovery."
+msgstr ""
+"**Bulk Flasher (`flasher.py`)** — The mobile executor. The script automates the tedious "
+"flashing process. It listens at a specific address in the local network, acting as a "
+"TFTP server (via `tftp-now`), responding to automatic router requests in Recovery mode."
+
+#: ../../architecture.md:12
+msgid "Бізнес-логіка та складні алгоритми"
+msgstr "Business Logic and Complex Algorithms"
+
+#: ../../architecture.md:14
+msgid "1. Детермінована генерація Mesh ключів (802.11s)"
+msgstr "1. Deterministic Mesh Key Generation (802.11s)"
+
+#: ../../architecture.md:15
+msgid ""
+"Mesh мережа працює безпечно завдяки WPA3-SAE (або подібним протоколам "
+"WPA2-PSK) ключам. Для того, щоб зв'язок між сусідніми вузлами (наприклад,"
+" \"А\" та \"Б\") міг бути встановлений без центрального контролера, "
+"необхідно, щоб обидва вузли отримали абсолютно ідентичний ключ."
+msgstr ""
+"The Mesh network operates securely thanks to WPA3-SAE (or similar WPA2-PSK protocols) keys. "
+"In order for a connection between neighboring nodes (e.g., \"A\" and \"B\") to be established "
+"without a central controller, both nodes must receive an absolutely identical key."
+
+#: ../../architecture.md:17
+#, python-brace-format
+msgid ""
+"**Алгоритм `generate_mesh_key`:** Функція використовує звичайний SHA-256 "
+"хеш. Замість випадкової генерації ключів, яка потребувала б збереження "
+"бази даних, система покладається на імена самих вузлів та \"сіль\" (salt:"
+" `openwrt_mesh`). Це забезпечує повну симетрію — за умови ідентичності "
+"топології, результат генерації буде збігатися: "
+"`hashlib.sha256(f\"{node1}{node2}{salt}\".encode()).hexdigest()[:32]` Це "
+"зміниться на проді, я обіцяю..."
+msgstr ""
+"**`generate_mesh_key` Algorithm:** The function uses a standard SHA-256 hash. "
+"Instead of random key generation, which would require a database, the system relies "
+"on the node names themselves and a \"salt\" (salt: `openwrt_mesh`). This ensures "
+"total symmetry — as long as the topology is identical, the generation result will match: "
+"`hashlib.sha256(f\"{node1}{node2}{salt}\".encode()).hexdigest()[:32]` This will change on prod, I promise..."
+
+#: ../../architecture.md:23
+msgid "2. Динамічне призначення Ethernet портів"
+msgstr "2. Dynamic Ethernet Port Assignment"
+
+#: ../../architecture.md:24
+msgid ""
+"В алгоритмі `build_ethernet_ports` використовується концепція "
+"неорієнтованого графа. Сині лінії топології представляють дротові "
+"з'єднання (Ethernet). Оскільки кожен роутер має фізичне обмеження "
+"(зазвичай 4 LAN-порти), скрипт розраховує, скільки портів необхідно "
+"активувати:"
+msgstr ""
+"The `build_ethernet_ports` algorithm uses the concept of an undirected graph. "
+"Blue lines in the topology represent wired (Ethernet) connections. Since each "
+"router has a physical limit (usually 4 LAN ports), the script calculates "
+"how many ports need to be activated:"
+
+#: ../../architecture.md:25
+msgid "Перебирає всі `blue` лінки."
+msgstr "Iterates through all `blue` links."
+
+#: ../../architecture.md:26
+msgid "Питає в графа, скільки сусідів є в конкретної ноди V."
+msgstr "Asks the graph for the number of neighbors for a specific node V."
+
+#: ../../architecture.md:27
+msgid ""
+"Через список активує порти `[1, ..., N]`, тим самим створюючи "
+"bridge-з'єднання тільки там, де це фізично потрібно за схемою."
+msgstr ""
+"Activates ports `[1, ..., N]` via a list, thereby creating bridge connections "
+"only where physically required by the diagram."
+
+#: ../../architecture.md:29
+msgid "3. Автоматична генерація SSH Ключів (Dropbear)"
+msgstr "3. Automatic SSH Key Generation (Dropbear)"
+
+#: ../../architecture.md:30
+msgid ""
+"Задля максимальної безпеки, після встановлення Mesh-мережі, доступ до "
+"пристрою через пароль **вимкнено** (`Option PasswordAuth 'off'`). Скрипт "
+"прозоро для користувача генерує RSA 2048 ключі за допомогою `ssh-keygen` "
+"утиліти під час рендерінгу. Публічний ключ записується до "
+"`authorized_keys` пристрою, а приватний залишається адміністратору в "
+"папці `configs/keys`."
+msgstr ""
+"For maximum security, password access to the device is **disabled** "
+"(`Option PasswordAuth 'off'`) after the Mesh network is set up. The script "
+"transparently generates RSA 2048 keys using the `ssh-keygen` utility during "
+"rendering. The public key is written to the device's `authorized_keys`, "
+"while the private key remains with the administrator in the `configs/keys` folder."
+
+#: ../../architecture.md:32
+msgid "Схема взаємодії при розгортанні"
+msgstr "Deployment Interaction Scheme"
+
+#: ../../architecture.md:33
+msgid "Користувач малює граф у `MeshGraphViewer`."
+msgstr "The user draws a graph in `MeshGraphViewer`."
+
+#: ../../architecture.md:34
+msgid "Генерується `topology.json`."
+msgstr "`topology.json` is generated."
+
+#: ../../architecture.md:35
+msgid ""
+"`generate_configs.py` компілює `topology.json` -> OpenWrt Templates -> "
+"`ImageBuilder`."
+msgstr ""
+"`generate_configs.py` compiles `topology.json` -> OpenWrt Templates -> `ImageBuilder`."
+
+#: ../../architecture.md:36
+msgid ""
+"Створені `.bin` файли передаються до `bulk-flasher.py`, який масово "
+"зашиває їх в роутери на стенді."
+msgstr ""
+"The created `.bin` files are passed to `bulk-flasher.py`, which flashes them onto "
+"the routers on the test bench in bulk."
